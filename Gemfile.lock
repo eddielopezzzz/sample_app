@@ -89,6 +89,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   x86-mingw32
@@ -103,3 +104,4 @@ DEPENDENCIES
   rspec-rails (= 2.0.1)
   sqlite3
   webrat (= 0.7.1)
+  will_paginate (~> 3.0.pre2)
