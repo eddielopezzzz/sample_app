@@ -45,6 +45,11 @@ class User < ActiveRecord::Base
     !current_user.nil?
   end
   
+  def feed
+    # This is preliminary. See Chapter 12 for full implementation
+    Micropost.where("user_id = ?", id)
+  end
+  
   private 
   
   def encrypt_password
