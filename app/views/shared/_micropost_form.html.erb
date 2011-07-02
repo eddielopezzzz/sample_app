@@ -1,7 +1,24 @@
+<script type="text/javascript">
+function limitText(limitField, limitCount, limitNum) {
+	if (limitField.value.length > limitNum) {
+		limitField.value = limitField.value.substring(0, limitNum);
+	} else {
+		limitCount.value = limitNum - limitField.value.length;
+	}
+}
+</script>
+
 <%= form_for @micropost do |f| %>
 <%= render 'shared/error_messages', :object => f.object %>
 <div class="field">
-	<%= f.text_area :content%>
+	<%= f.text_area :content,
+	:rows => 6,
+	:cols => 31,
+	:maxlength => 140,
+	:id => "content",
+	:onkeyup => "limitText(this.form.content,this.form.countdown,140);" %><br />
+	<font size="1">(Maximum characters: 140)<br>
+You have <input readonly type="text" name="countdown" size="3" value="140"> characters left.</font>
 </div>
 <div class="actions">
 	<%= f.submit 'Submit' %>
