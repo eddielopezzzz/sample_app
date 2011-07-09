@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "relationships/new"
+
   get "sessions/new"
 
   resources :users do
